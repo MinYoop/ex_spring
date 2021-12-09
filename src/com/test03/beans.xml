@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- kang 이라는 이름을 가진 bean을 만들자. -->
+	<bean id="kang" class="com.test03.Engineer">
+	<!-- 강호동, 2000000, 기술 1팀 -->
+		<constructor-arg value="강호동" />
+		<constructor-arg value="2000000" />
+		<property name="dept" value="기술 1팀"/>
+	</bean>	
+	<!-- you 라는 이름을 가진 bean을 만들자. -->
+	<!-- 유재석, 3000000, 개발 1팀 -->
+	
+	<bean id="youemp" class="com.test03.Emp">
+		<constructor-arg value="유재석" />
+		<constructor-arg value="3000000"/>
+	</bean>
+	
+	<bean id="you" class="com.test03.Developer">
+	
+		<property name="emp" ref="youemp"/>
+		<property name="dept" value="개발 1팀"/>
+	</bean>	
+	
+	<!-- MTest에서 kang, you를 출력하자. -->
+
+</beans>

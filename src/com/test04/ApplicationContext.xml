@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	
+	<!-- 강호동, 2000000, 기술 1팀 -->
+	<bean id = "kang" class="com.test04.Emp">
+		<constructor-arg name="name" value = "강호동"/>
+		<constructor-arg name = "salary" value = "2000000"/>		
+	</bean>
+	
+	<bean id = "kangho" class="com.test04.Engineer">
+		<constructor-arg name ="emp" ref="kang" />		
+		<constructor-arg name ="dept" value="기술 1팀" />
+	</bean>
+	<!-- 유재석, 3000000, 개발 1팀 -->
+	
+	
+	
+	<bean id = "youjae" class="com.test04.Developer"><!-- 이렇게 태그안에 bean으로 넣어줘도 된다 -->
+		<constructor-arg name="emp" >
+			<bean id = "you" class="com.test04.Emp">
+				<constructor-arg name ="name" value = "유재석"/>
+				<constructor-arg name ="salary" value = "3000000"/>		
+			</bean>
+		</constructor-arg>		
+		<constructor-arg value="개발 1팀" />
+	</bean>
+	<!--  MTest에서 출력하자. -->
+
+</beans>

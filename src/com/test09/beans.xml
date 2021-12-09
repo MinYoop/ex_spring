@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   <!-- <bean id="favoriteFood" class="com.test09.Food">
+      <property name="name" value="치킨"/>
+      <property name="price" value="20000"/>
+   </bean> -->
+   
+   <bean id="unfavoriteFood" class="com.test09.Food">
+      <property name="name" value="야채"/>
+      <property name="price" value="10000"/>
+   </bean>
+
+
+   
+   <bean id="MyFood" class="com.test09.MyFoodMgr" autowire="constructor">
+   </bean>
+   
+</beans>
+
+<!-- 
+   autowire속성값
+   1.byName : 
+      id="favoriteFood" -> setFavoriteFood 자동 호출
+      참조 변수의 이름과 같은 해당 객체가 있을 때,
+      자동 할당
+   
+   2.byType : 
+      참조변수(파라미터, 매개변수)의 Type과 같은 메서드의 param이 선언되어 있으면 자동할당
+      setFavoriteFood(Food f)
+      
+   3.constructor : 
+      생성자를 통해서 같은 Type이 있으면 할당 / setter 대신에 생성자 type에 맞게 해줌
+      
+   4.default : 
+      생성자에 할당할 type이 있는지를 먼저 확인 후, 없으면 메서드에서 type이 있는지를 확인하여 할당
+      
+   
+ -->
