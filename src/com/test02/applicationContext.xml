@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Address 클래스를 가지고 myAddr01 이라는 bean -->
+	
+	<bean id = "myAddr01" class="com.test02.Address"></bean>
+	
+	<!-- myAddr02를 만들어 보자. (자기 짝궁 데이터 넣자) -->
+	
+	<bean id = "myAddr02" class="com.test02.Address">
+		<!-- <constructor-arg>
+			<value>최강일</value>			
+		</constructor-arg>
+		
+		<constructor-arg>
+			<value>서울시</value>			
+		</constructor-arg>
+		
+		<constructor-arg>
+			<value>010XXXXXXX</value>			 
+		</constructor-arg> -->
+		
+		<constructor-arg value = "최강일"/>
+		<constructor-arg value = "서울시"/>
+		<constructor-arg value = "010XXXXXXXX"/>
+		
+		      <!-- myAddr03를 만들어보자. -->
+	</bean>
+		      
+   <bean id="myAddr03" class="com.test02.Address">
+         <constructor-arg>   
+            <value>배건호</value>
+        </constructor-arg>
+      
+         <constructor-arg>
+           <value>안양</value>         
+         </constructor-arg>
+      
+         <constructor-arg>
+            <value>010XXXXXXX</value>         
+        </constructor-arg>
+      
+   </bean>
+   
+   <bean id = "lee" class = "com.test02.JobAddress">
+   		<constructor-arg ref="myAddr02" />
+   		<constructor-arg value="장군" />
+   </bean>
+   
+   <bean id="kim" class= "com.test02.JobAddress">
+   		<constructor-arg ref="myAddr03"/>
+   		<constructor-arg value="선비" />
+   </bean>
+	
+		
+
+
+</beans>
