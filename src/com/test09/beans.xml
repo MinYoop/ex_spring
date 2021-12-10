@@ -3,15 +3,15 @@
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-   <!-- <bean id="favoriteFood" class="com.test09.Food">
+   <bean id="favoriteFood" class="com.test09.Food">
       <property name="name" value="치킨"/>
       <property name="price" value="20000"/>
-   </bean> -->
+   </bean>
    
-   <bean id="unfavoriteFood" class="com.test09.Food">
+   <!--  <bean id="unfavoriteFood" class="com.test09.Food">
       <property name="name" value="야채"/>
       <property name="price" value="10000"/>
-   </bean>
+   </bean> -->
 
 
    

@@ -5,11 +5,11 @@
 
 	<!-- 짝꿍의 이름과 생일을 가지고 객체 2개를 만들자. -->
 	<!-- 한개는 생성자로, 다른 한개는 setter로 데이터를 주입하자. -->
-	<bean id = "kang" class = "com.test02.BirthDto">
+	<bean id = "ho" class = "com.test02.BirthDto">
 		<constructor-arg value="배건호" />
 		<constructor-arg value="0216" />
 	</bean>
-	<bean id = "ho" class = "com.test02.BirthDto"> 
+	<bean id = "kang" class = "com.test02.BirthDto"> 
 		<property name="name" value="최강일"/>
 		<property name="birth" value="0929"/> 
 	</bean>

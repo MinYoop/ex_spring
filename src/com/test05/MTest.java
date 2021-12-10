@@ -11,6 +11,12 @@ public class MTest {
 		Engineer kang = factory.getBean("kang",Engineer.class);
 		System.out.println(kang);
 		
+		
+		System.out.println(factory.getBean("you"));
+		Developer you = factory.getBean("you",Developer.class);
+		
+		System.out.println(you);
+		
 	}
 
 }

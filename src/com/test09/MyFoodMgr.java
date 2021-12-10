@@ -9,7 +9,9 @@ public class MyFoodMgr {
    
    
    public MyFoodMgr() {
+	
 	super();
+	System.out.println("호출");
 }
 
 
