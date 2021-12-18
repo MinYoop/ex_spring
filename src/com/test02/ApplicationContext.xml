@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<context:component-scan base-package="com.test02"></context:component-scan>
+	<bean id="man" class="com.test02.Man"></bean>
+	<bean id="woman" class="com.test02.Woman"></bean>
+	
+	
+	
+	<bean id="myAdvice" class="com.test02.MyAspect"></bean>
+	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"></bean><!-- 여기서 오류나면 오타거나 porm.xml -->
+	<bean class="org.springframework.aop.aspectj.AspectJExpressionPointcutAdvisor">
+		<property name="advice" ref="myAdvice"></property> <!-- 실제코드 -->
+		<property name="expression" value="execution(public * *(..))"></property>	<!-- public에 파라미터 뭐든 상관없다는 뜼 -->	<!-- 포인트 컷 타입이뭐든 호출--> <!-- 얘네가 어디에 묶을 것인가? -->
+	</bean>
+	<!--  advice와 pointcut이 합쳐서 advisor=aspect(advice와 pointcut 이 합쳐진것),  -->
+</beans>
